@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <title>Traffschool — школа арбитража трафика</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="src/css/style.css" />
+</head>
+<body class="page" id="top">
+<div class="page__background"></div>
+
+<header class="header">
+    <div class="container header__inner">
+        <a href="#top" class="logo">
+            <img
+                    src="src/assets/logo-traffschool.svg"
+                    alt="Traffschool"
+                    class="logo__img"
+            />
+        </a>
+
+        <nav class="nav" aria-label="Главное меню">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="#tariffs" class="nav__link">Тарифы</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#ref" class="nav__link">Реф. система</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#cases" class="nav__link">Кейсы учеников</a>
+                </li>
+                <li class="nav__item">
+                    <a href="https://accounts.google.com/ServiceLogin" class="nav__link">Бонус</a>
+                </li>
+            </ul>
+        </nav>
+
+        <a href="https://t.me/tribute/app?startapp=sGlp" class="btn header__cta">
+            Стать участником
+        </a>
+
+        <button
+                class="header__burger"
+                type="button"
+                aria-label="Открыть меню"
+                aria-expanded="false"
+                aria-controls="mobile-menu"
+        >
+            <span class="header__burger-line"></span>
+            <span class="header__burger-line"></span>
+            <span class="header__burger-line"></span>
+        </button>
+
+        <nav
+                class="nav-mobile"
+                id="mobile-menu"
+                aria-label="Мобильное меню"
+        >
+            <ul class="nav-mobile__list">
+                <li class="nav-mobile__item">
+                    <a href="#tariffs" class="nav-mobile__link">Тарифы</a>
+                </li>
+                <li class="nav-mobile__item">
+                    <a href="#ref" class="nav-mobile__link">Реф. система</a>
+                </li>
+                <li class="nav-mobile__item">
+                    <a href="#cases" class="nav-mobile__link">Кейсы учеников</a>
+                </li>
+                <li class="nav-mobile__item">
+                    <a href="#bonus" class="nav-mobile__link">Бонус</a>
+                </li>
+                <li class="nav-mobile__item">
+                    <a href="#join" class="nav-mobile__link nav-mobile__link--accent">
+                        Стать участником
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="main">
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container hero__inner">
+            <div class="hero__content">
+                <p class="hero__eyebrow">
+                    НАЧНИ СВОЙ ПУТЬ УЖЕ СЕЙЧАС
+                    <span class="hero__eyebrow-accent">!</span>
+                </p>
+
+                <h1 class="hero__title">
+              <span class="hero__title-line">
+                Одна из лучших приваток
+              </span>
+                    <span class="hero__title-line hero__title-line--accent">
+                в сфере арбитража трафика
+              </span>
+                    <span class="hero__title-line">
+                для новичков и не только.
+              </span>
+                </h1>
+
+                <div class="hero__reviews">
+                    <div class="hero-reviews__avatars">
+                        <img
+                                src="src/assets/review-avatar-1.png"
+                                alt="Аватар ученика 1"
+                                class="hero-reviews__avatar"
+                        />
+                        <img
+                                src="src/assets/review-avatar-2.png"
+                                alt="Аватар ученика 2"
+                                class="hero-reviews__avatar"
+                        />
+                        <img
+                                src="src/assets/review-avatar-3.png"
+                                alt="Аватар ученика 3"
+                                class="hero-reviews__avatar"
+                        />
+                        <img
+                                src="src/assets/review-avatar-4.png"
+                                alt="Аватар ученика 4"
+                                class="hero-reviews__avatar"
+                        />
+                        <img
+                                src="src/assets/review-avatar-5.png"
+                                alt="Аватар ученика 5"
+                                class="hero-reviews__avatar"
+                        />
+                    </div>
+
+                    <div class="hero-reviews__info">
+                        <p class="hero-reviews__count">
+                            100<span class="hero-reviews__plus">+</span>
+                        </p>
+                        <p class="hero-reviews__label">Реальных отзывов</p>
+                    </div>
+                </div>
+
+                <div class="hero__mentor">
+                    <div class="hero-mentor__avatar-wrapper">
+                        <img
+                                src="src/assets/mentor-avatar.png"
+                                alt="Слава / Slovekinz"
+                                class="hero-mentor__avatar"
+                        />
+                    </div>
+                    <p class="hero-mentor__text">
+                        Я Слава/Slovekinz, ваш личный наставник и куратор. Мой онлайн в
+                        телеграме открыт, пока я онлайн — я помогу вам с любым вопросом,
+                        связанным с нашей сферой. Разные лайфхаки, уникальные офферы,
+                        различные связки и помощь с любыми интересующими вопросами ждет
+                        вас в обучении.
+                    </p>
+                </div>
+            </div>
+
+            <div class="hero__visual">
+                <img
+                        src="src/assets/hero-phones-glow.png"
+                        alt="Приложение школы траффика на экранах телефонов"
+                        class="hero__phones"
+                />
+            </div>
+        </div>
+    </section>
+
+    <!-- БЛОК 2: РЕКОМЕНДУЮТ МЕНЕДЖЕРЫ -->
+    <section class="section recommendations" id="recommend">
+        <div class="container">
+            <div class="recommendations__top">
+                <h2 class="recommendations__title">
+                    Меня <span class="recommendations__title-accent">рекомендуют</span>
+                    <br />
+                    менеджеры крупных компаний.
+                </h2>
+
+                <p class="recommendations__text">
+                    Я выбиваю отличные условия для участников
+                    <span class="recommendations__accent">приватки</span>.
+                    Повышенные проценты по
+                    <span class="recommendations__accent">RevShare</span>, а также
+                    высокая лояльность от администрации и менеджеров ждут вас
+                    практически в любой ПП.
+                </p>
+            </div>
+
+            <div class="recommendations-cards">
+                <article class="recommendations-card">
+                    <div class="recommendations-card__top">
+                        <p class="recommendations-card__index">01.</p>
+                    </div>
+                    <h3 class="recommendations-card__title">1win partners.</h3>
+                    <p class="recommendations-card__subtitle">
+                        Партнерская программа<br />
+                        с RS до 60%
+                    </p>
+                    <p class="recommendations-card__meta">
+                        <span>Сложность: <b>7/10</b></span><br />
+                        <span>Доходность: <b>8/10</b></span>
+                    </p>
+                </article>
+
+                <article class="recommendations-card recommendations-card--accent">
+                    <div class="recommendations-card__top">
+                        <p class="recommendations-card__index">02.</p>
+                    </div>
+                    <h3 class="recommendations-card__title">
+                        PocketOption affiliate
+                    </h3>
+                    <p class="recommendations-card__subtitle">
+                        RevShare до 80%, мои ученики выбирают именно этот оффер
+                        для постоянной работы и масштабирования
+                    </p>
+                    <p class="recommendations-card__meta">
+                        <span>Сложность: <b>4/10</b></span><br />
+                        <span>Доходность: <b>9.5/10</b></span>
+                    </p>
+                    <a href="https://t.me/tribute/app?startapp=sGlp" class="recommendations-card__link">
+                        Узнать больше
+                    </a>
+                </article>
+
+                <article class="recommendations-card">
+                    <div class="recommendations-card__top">
+                        <p class="recommendations-card__index">03.</p>
+                    </div>
+                    <h3 class="recommendations-card__title">MostBet partners.</h3>
+                    <p class="recommendations-card__subtitle">
+                        Партнерская программа<br />
+                        с RS до 60%
+                    </p>
+                    <p class="recommendations-card__meta">
+                        <span>Сложность: <b>8/10</b></span><br />
+                        <span>Доходность: <b>8/10</b></span>
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- БЛОК 3: Путь + Видео -->
+    <section class="section growth" id="growth">
+        <div class="container growth__inner">
+            <div class="growth__visual">
+                <img
+                        src="src/assets/growth-steps.png"
+                        alt="Путь от новичка до эксперта в арбитраже"
+                        class="growth__image"
+                />
+            </div>
+
+            <div class="growth__content">
+                <h2 class="growth__title">
+                    Научить тебя <span class="growth__title-accent">лить траффик</span>
+                    — моя главная задача
+                </h2>
+
+                <p class="growth__text">
+                    Я не обещаю вам горы денег, но я дам вам всё для того, чтобы вы эти
+                    горы смогли получать. Я даю вам знания, кейсы, лучшие связки,
+                    обучаю всему что знаю сам.
+                </p>
+
+                <p class="growth__text">
+                    Всё остальное зависит от вас самих, я помогу вам на всех шагах: от
+                    создания воронки до подбора ГЕО, вам главное слушать и
+                    запоминать, тестировать, советоваться, проявлять максимум
+                    желания, чтобы достигать целей в данной нише.
+                </p>
+
+                <div class="growth__video-block">
+                    <p class="growth__video-label">Ознакомительное видео</p>
+                    <div class="growth-video">
+                        <iframe
+                                src="https://www.youtube.com/embed/kwkKsKzqNTI"
+                                title="Ознакомительное видео Traffschool"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen
+                        ></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- БЛОК 4: Что traffschool тебе даст -->
+    <section class="section benefits" id="benefits">
+        <div class="container">
+            <div class="benefits__head">
+                <h2 class="benefits__title">
+                    Что <span class="benefits__title-accent">traffschool.</span> тебе
+                    даст
+                </h2>
+                <p class="benefits__subtitle">
+                    Мой приватный канал снабдит тебя всем, что нужно для комфортной и
+                    долгосрочной работы в сфере арбитража трафика.
+                </p>
+            </div>
+
+            <div class="benefits__cards">
+                <article class="benefits-card">
+                    <div class="benefits-card__icon">
+                        <img
+                                src="src/assets/benefit-theory-icon.svg"
+                                alt="Теория"
+                        />
+                    </div>
+                    <h3 class="benefits-card__title">ТЕОРИЯ</h3>
+                    <p class="benefits-card__text">
+                        Получишь доступ в закрытый телеграм-канал с актуальной и
+                        обновляющейся информацией, которая поможет тебе достигать
+                        хороших результатов.
+                    </p>
+                </article>
+
+                <article class="benefits-card benefits-card--accent">
+                    <div class="benefits-card__icon benefits-card__icon--light">
+                        <img
+                                src="src/assets/benefit-practice-icon.svg"
+                                alt="Практика"
+                        />
+                    </div>
+                    <h3 class="benefits-card__title">ПРАКТИКА</h3>
+                    <p class="benefits-card__text">
+                        Получишь материалы и софты, которые спокойно научишься применять
+                        на своей практике, экономя своё время и быстрее выходя на
+                        результат.
+                    </p>
+                </article>
+
+                <article class="benefits-card">
+                    <div class="benefits-card__icon">
+                        <img
+                                src="src/assets/benefit-network-icon.svg"
+                                alt="Нетворкинг"
+                        />
+                    </div>
+                    <h3 class="benefits-card__title">НЕТВОРКИНГ</h3>
+                    <p class="benefits-card__text">
+                        Получишь доступ в закрытый тематический телеграм-чат со мной и
+                        единомышленниками, общение в котором поможет тебе быстрее
+                        освоиться.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- БЛОК 5: Доступные тарифы -->
+    <section class="section tariffs" id="tariffs">
+        <div class="container">
+            <h2 class="tariffs__title">
+                ДОСТУПНЫЕ <span class="tariffs__title-accent">ТАРИФЫ</span>
+            </h2>
+
+            <div class="tariffs__grid">
+                <article class="tariff">
+                    <div class="tariff__icon tariff__icon--light">
+                        <img
+                                src="src/assets/tariff-consult-icon.svg"
+                                alt="Консультация"
+                        />
+                    </div>
+                    <h3 class="tariff__name">Консультация</h3>
+
+                    <ul class="tariff__list">
+                        <li>Обсуждение любых тем</li>
+                        <li>Запись созвона</li>
+                    </ul>
+
+                    <p class="tariff__price">
+                        2,900 ₽/20 минут<br />
+                        5,900 ₽/60 минут
+                    </p>
+
+                    <a href="https://t.me/tribute/app?startapp=sGlp" class="btn tariff__btn">
+                        Подробнее
+                    </a>
+                </article>
+
+                <article class="tariff">
+                    <div class="tariff__icon tariff__icon--accent">
+                        <img
+                                src="src/assets/tariff-private-icon.svg"
+                                alt="Приваточка"
+                        />
+                    </div>
+                    <h3 class="tariff__name">Приваточка</h3>
+
+                    <ul class="tariff__list">
+                        <li>Уникальные офферы</li>
+                        <li>Софты для работы</li>
+                        <li>Видео-уроки</li>
+                        <li>Скидки у партнёров</li>
+                        <li>Закрытый чат</li>
+                    </ul>
+
+                    <p class="tariff__price">
+                        4,990 ₽/месяц
+                    </p>
+
+                    <a href="https://t.me/tribute/app?startapp=sGlp" class="btn tariff__btn">
+                        Подробнее
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- БЛОК 6: Реальные кейсы моих учеников -->
+    <section class="section cases" id="cases">
+        <div class="container">
+            <div class="cases__head">
+                <h2 class="cases__title">
+                    Реальные <span class="cases__title-accent">кейсы</span> моих учеников
+                </h2>
+                <p class="cases__subtitle">
+                    Живые результаты людей, которые прошли обучение и применили
+                    связки на практике.
+                </p>
+            </div>
+
+            <div class="cases-slider" data-cases-slider>
+                <button
+                        class="cases-slider__arrow cases-slider__arrow--prev"
+                        type="button"
+                        aria-label="Предыдущие кейсы"
+                        data-cases-prev
+                >
+                    ‹
+                </button>
+
+                <div class="cases-slider__viewport">
+                    <div class="cases-slider__track">
+                        <!-- 1 -->
+                        <article class="case-card">
+                            <div class="case-card__media">
+                                <video
+                                        class="case-card__video"
+                                        src="src/assets/videos/case-1.mp4"
+                                        preload="metadata"
+                                ></video>
+                                <button
+                                        type="button"
+                                        class="btn case-card__play-btn"
+                                >
+                                    Нажми
+                                </button>
+                            </div>
+                            <h3 class="case-card__title">Кейс №1</h3>
+                            <p class="case-card__text">
+                                С&nbsp;нуля до&nbsp;2&nbsp;100&nbsp;$ за&nbsp;2&nbsp;месяца на&nbsp;гембле под наставничеством Славы.
+                            </p>
+                        </article>
+
+                        <!-- 2 -->
+                        <article class="case-card">
+                            <div class="case-card__media">
+                                <video
+                                        class="case-card__video"
+                                        src="src/assets/videos/case-2.mp4"
+                                        preload="metadata"
+                                ></video>
+                                <button
+                                        type="button"
+                                        class="btn case-card__play-btn"
+                                >
+                                    Нажми
+                                </button>
+                            </div>
+                            <h3 class="case-card__title">Кейс №2</h3>
+                            <p class="case-card__text">
+                                Более 1,2&nbsp;млн оборота на&nbsp;1win и запуск новой связки после обучения.
+                            </p>
+                        </article>
+
+                        <!-- 3 -->
+                        <article class="case-card">
+                            <div class="case-card__media">
+                                <video
+                                        class="case-card__video"
+                                        src="src/assets/videos/case-3.mp4"
+                                        preload="metadata"
+                                ></video>
+                                <button
+                                        type="button"
+                                        class="btn case-card__play-btn"
+                                >
+                                    Нажми
+                                </button>
+                            </div>
+                            <h3 class="case-card__title">Кейс №3</h3>
+                            <p class="case-card__text">
+                                За&nbsp;2&nbsp;месяца ~1&nbsp;400&nbsp;$ прибыли и помощь со&nbsp;всем выводом средств.
+                            </p>
+                        </article>
+
+                        <!-- 4 -->
+                        <article class="case-card">
+                            <div class="case-card__media">
+                                <video
+                                        class="case-card__video"
+                                        src="src/assets/videos/case-4.mp4"
+                                        preload="metadata"
+                                ></video>
+                                <button
+                                        type="button"
+                                        class="btn case-card__play-btn"
+                                >
+                                    Нажми
+                                </button>
+                            </div>
+                            <h3 class="case-card__title">Кейс №4</h3>
+                            <p class="case-card__text">
+                                2&nbsp;721&nbsp;$ депозитов за&nbsp;2&nbsp;месяца и&nbsp;70% RevShare, заливая через софт на&nbsp;YouTube/Inst/TikTok.
+                            </p>
+                        </article>
+
+                        <!-- 5 -->
+                        <article class="case-card">
+                            <div class="case-card__media">
+                                <video
+                                        class="case-card__video"
+                                        src="src/assets/videos/case-5.mp4"
+                                        preload="metadata"
+                                ></video>
+                                <button
+                                        type="button"
+                                        class="btn case-card__play-btn"
+                                >
+                                    Нажми
+                                </button>
+                            </div>
+                            <h3 class="case-card__title">Кейс №5</h3>
+                            <p class="case-card__text">
+                                Рост с&nbsp;31 депозита до&nbsp;91&nbsp;000&nbsp;$ депозитов и&nbsp;14&nbsp;000&nbsp;$ дохода в&nbsp;Mostbet.
+                            </p>
+                        </article>
+
+                        <!-- 6 -->
+                        <article class="case-card">
+                            <div class="case-card__media">
+                                <video
+                                        class="case-card__video"
+                                        src="src/assets/videos/case-6.mp4"
+                                        preload="metadata"
+                                ></video>
+                                <button
+                                        type="button"
+                                        class="btn case-card__play-btn"
+                                >
+                                    Нажми
+                                </button>
+                            </div>
+                            <h3 class="case-card__title">Кейс №6</h3>
+                            <p class="case-card__text">
+                                1,5&nbsp;месяца работы по&nbsp;схеме с&nbsp;авто-генерацией видео — заработок позволил сразу купить MacBook.
+                            </p>
+                        </article>
+
+                        <!-- 7 -->
+                        <article class="case-card">
+                            <div class="case-card__media">
+                                <video
+                                        class="case-card__video"
+                                        src="src/assets/videos/case-7.mp4"
+                                        preload="metadata"
+                                ></video>
+                                <button
+                                        type="button"
+                                        class="btn case-card__play-btn"
+                                >
+                                    Нажми
+                                </button>
+                            </div>
+                            <h3 class="case-card__title">Кейс №7</h3>
+                            <p class="case-card__text">
+                                После внедрения бота из&nbsp;приватки конверсия ×2 и&nbsp;60&nbsp;000&nbsp;$ комиссии за&nbsp;24&nbsp;дня вместо обычных 20–30k&nbsp;$ в&nbsp;месяц.
+                            </p>
+                        </article>
+
+                        <!-- 8 -->
+                        <article class="case-card">
+                            <div class="case-card__media">
+                                <video
+                                        class="case-card__video"
+                                        src="src/assets/videos/case-8.mp4"
+                                        preload="metadata"
+                                ></video>
+                                <button
+                                        type="button"
+                                        class="btn case-card__play-btn"
+                                >
+                                    Нажми
+                                </button>
+                            </div>
+                            <h3 class="case-card__title">Кейс №8</h3>
+                            <p class="case-card__text">
+                                Неделя залива ~1,5&nbsp;часа в&nbsp;день: 9&nbsp;FTD, 800&nbsp;$ депозитов и&nbsp;540&nbsp;$ комиссии.
+                            </p>
+                        </article>
+                    </div>
+                </div>
+
+                <button
+                        class="cases-slider__arrow cases-slider__arrow--next"
+                        type="button"
+                        aria-label="Следующие кейсы"
+                        data-cases-next
+                >
+                    ›
+                </button>
+
+                <div class="cases-slider__dots"></div>
+            </div>
+        </div>
+    </section>
+
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container footer__inner">
+        <div class="footer__col footer__col--left">
+            <p class="footer__copy">
+                © 2025 Traffschool. Все права защищены.
+            </p>
+        </div>
+
+        <div class="footer__col footer__col--center">
+            <button
+                    type="button"
+                    class="footer__link"
+                    data-modal-open="offer"
+            >
+                Публичная оферта
+            </button>
+            <button
+                    type="button"
+                    class="footer__link"
+                    data-modal-open="disclaimer"
+            >
+                Отказ от ответственности
+            </button>
+            <button
+                    type="button"
+                    class="footer__link"
+                    data-modal-open="policy"
+            >
+                Политика конфиденциальности
+            </button>
+        </div>
+
+        <div class="footer__col footer__col--right">
+            <p class="footer__domain">traffschool.net</p>
+        </div>
+    </div>
+</footer>
+
+<!-- MODALS -->
+
+<!-- Политика конфиденциальности -->
+<div class="modal" data-modal="policy" aria-hidden="true">
+    <div class="modal__overlay" data-modal-close></div>
+    <div class="modal__content" role="dialog" aria-modal="true">
+        <button
+                type="button"
+                class="modal__close"
+                aria-label="Закрыть"
+                data-modal-close
+        >
+            ×
+        </button>
+        <h2 class="modal__title">Политика конфиденциальности</h2>
+        <div class="modal__body">
+            <p><strong>1. Сбор данных</strong></p>
+            <p>
+                Сайт не запрашивает и не обрабатывает персональные данные
+                пользователей. Обращения через Telegram/email не фиксируются в базе
+                сайта.
+            </p>
+
+            <p><strong>2. Cookies</strong></p>
+            <p>
+                Сайт использует только технические cookies, необходимые для работы
+                платформы Tilda (идентификация сессии, защита от атак). Они не
+                обрабатывают персональные данные и не требуют согласия пользователя
+                в соответствии с п. 1 ст. 15.1 Федерального закона №149-ФЗ
+                «Об информации».
+            </p>
+            <p>
+                Вы можете отключить cookies в настройках браузера, но это может
+                нарушить работу сайта.
+            </p>
+
+            <p><strong>3. Отзывы</strong></p>
+            <p>
+                Публикуемые примеры содержат только никнеймы/инициалы. Видеоматериалы
+                размещены с согласия авторов.
+            </p>
+
+            <p>
+                Почта для связи: <a href="mailto:toffadds@yandex.ru">toffadds@yandex.ru</a><br />
+                Telegram: <a href="https://t.me/toffadds" target="_blank">@toffadds</a>
+            </p>
+
+            <p class="modal__updated">Обновлено: 13.07.25</p>
+        </div>
+    </div>
+</div>
+
+<!-- Публичная оферта -->
+<div class="modal" data-modal="offer" aria-hidden="true">
+    <div class="modal__overlay" data-modal-close></div>
+    <div class="modal__content" role="dialog" aria-modal="true">
+        <button
+                type="button"
+                class="modal__close"
+                aria-label="Закрыть"
+                data-modal-close
+        >
+            ×
+        </button>
+        <h2 class="modal__title">Публичная оферта</h2>
+        <div class="modal__body">
+            <p><strong>1. Статус сайта</strong></p>
+            <p>
+                Материалы сайта предназначены исключительно для ознакомления.
+                Описание программ не является публичной офертой (ст. 437 ГК РФ).
+            </p>
+
+            <p><strong>2. Условия использования</strong></p>
+            <p>Запрещается:</p>
+            <ul>
+                <li>Копировать контент для коммерческого использования;</li>
+                <li>Распространять материалы без ссылки на источник.</li>
+            </ul>
+
+            <p><strong>3. Отзывы и кейсы</strong></p>
+            <p>
+                Все примеры демонстрируют возможные варианты и требуют личного
+                участия для повторения.
+            </p>
+
+            <p class="modal__updated">Обновлено: 13.07.25</p>
+        </div>
+    </div>
+</div>
+
+<!-- Отказ от ответственности -->
+<div class="modal" data-modal="disclaimer" aria-hidden="true">
+    <div class="modal__overlay" data-modal-close></div>
+    <div class="modal__content" role="dialog" aria-modal="true">
+        <button
+                type="button"
+                class="modal__close"
+                aria-label="Закрыть"
+                data-modal-close
+        >
+            ×
+        </button>
+        <h2 class="modal__title">Отказ от ответственности</h2>
+        <div class="modal__body">
+            <p>
+                Администрация сайта <strong>traffschool.net</strong> уведомляет:
+            </p>
+            <p>
+                1. Сайт является информационным ресурсом. Все материалы (включая
+                примеры результатов учеников) носят ознакомительный характер.
+            </p>
+            <p>
+                2. Размещённые кейсы отражают реальный индивидуальный опыт и не
+                являются гарантией аналогичного результата.
+            </p>
+            <p>
+                3. Администрация не несёт ответственности за решения, принятые
+                пользователями на основе материалов сайта, а также за результаты
+                применения методик третьими лицами.
+            </p>
+
+            <p class="modal__updated">Обновлено: 13.02.25</p>
+        </div>
+    </div>
+</div>
+
+<script src="src/js/main.js"></script>
+</body>
+</html>

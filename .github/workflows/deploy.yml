@@ -1,0 +1,24 @@
+name: Deploy to VPS
+
+on:
+  push:
+    branches:
+      - main   # если у тебя ветка master, замени на master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: 216.126.227.138
+          username: root
+          key: ${{ secrets.SSH_TRFSCHL_KEY }}
+          script: |
+            cd /var/www/trfschl
+            git pull

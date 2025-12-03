@@ -70,7 +70,7 @@ function initSmoothScroll() {
     });
 }
 
-/* Слайдер кейсов + видео */
+/* Слайдер кейсов + видео (бесконечный + свайпы) */
 
 function initCasesSlider() {
     const slider = document.querySelector("[data-cases-slider]");
@@ -95,8 +95,12 @@ function initCasesSlider() {
     let maxIndex = Math.max(0, slides.length - slidesPerView);
     let currentIndex = 0;
 
+    const SWIPE_THRESHOLD = 40; // px
+
     buildDots();
     updateSlider();
+
+    /* ----- Кнопки ----- */
 
     if (prevBtn) {
         prevBtn.addEventListener("click", () => {
@@ -109,6 +113,93 @@ function initCasesSlider() {
             goToSlide(currentIndex + 1);
         });
     }
+
+    /* ----- Свайпы (мышь + тач) ----- */
+
+    let isPointerDown = false;
+    let startX = 0;
+    let startY = 0;
+
+    function pointerDown(x, y) {
+        isPointerDown = true;
+        startX = x;
+        startY = y;
+    }
+
+    function pointerUp(x, y) {
+        if (!isPointerDown) return;
+        isPointerDown = false;
+
+        const dx = x - startX;
+        const dy = y - startY;
+
+        // интересует именно горизонтальный жест
+        if (Math.abs(dx) > SWIPE_THRESHOLD && Math.abs(dx) > Math.abs(dy)) {
+            if (dx < 0) {
+                goToSlide(currentIndex + 1); // свайп влево -> следующая
+            } else {
+                goToSlide(currentIndex - 1); // свайп вправо -> предыдущая
+            }
+        }
+    }
+
+    // мышь
+    slider.addEventListener("mousedown", (e) => {
+        if (e.button !== 0) return;
+        pointerDown(e.clientX, e.clientY);
+    });
+
+    slider.addEventListener("mouseup", (e) => {
+        pointerUp(e.clientX, e.clientY);
+    });
+
+    slider.addEventListener("mouseleave", (e) => {
+        if (!isPointerDown) return;
+        pointerUp(e.clientX, e.clientY);
+    });
+
+    // тач
+    slider.addEventListener(
+        "touchstart",
+        (e) => {
+            if (!e.touches[0]) return;
+            const t = e.touches[0];
+            pointerDown(t.clientX, t.clientY);
+        },
+        { passive: true }
+    );
+
+    slider.addEventListener(
+        "touchend",
+        (e) => {
+            if (!e.changedTouches[0]) return;
+            const t = e.changedTouches[0];
+            pointerUp(t.clientX, t.clientY);
+        },
+        { passive: true }
+    );
+
+    // свайп тачпадом / горизонтальный скролл
+    slider.addEventListener(
+        "wheel",
+        (e) => {
+            // интересует только горизонтальный жест,
+            // и чтобы он был сильнее вертикального
+            if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
+            if (Math.abs(e.deltaX) < 10) return;
+
+            e.preventDefault();
+
+            if (e.deltaX > 0) {
+                goToSlide(currentIndex + 1);
+            } else {
+                goToSlide(currentIndex - 1);
+            }
+        },
+        { passive: false }
+    );
+
+    /* ----- Dots ----- */
 
     function buildDots() {
         if (!dotsContainer) return;
@@ -137,6 +228,8 @@ function initCasesSlider() {
         });
     }
 
+    /* ----- Логика слайдов ----- */
+
     function getSlidesPerView() {
         const width = window.innerWidth;
         if (width >= 992) return 3;
@@ -144,17 +237,26 @@ function initCasesSlider() {
         return 1;
     }
 
+    function normalizeIndex(index) {
+        const total = maxIndex + 1;
+        if (total <= 0) return 0;
+        let i = index % total;
+        if (i < 0) i += total; // чтобы -1 → последний
+        return i;
+    }
+
     function goToSlide(index) {
-        currentIndex = clamp(index, 0, maxIndex);
+        currentIndex = normalizeIndex(index);
         updateSlider();
     }
 
     function updateSlider() {
         const newSlidesPerView = getSlidesPerView();
+
         if (newSlidesPerView !== slidesPerView) {
             slidesPerView = newSlidesPerView;
             maxIndex = Math.max(0, slides.length - slidesPerView);
-            currentIndex = clamp(currentIndex, 0, maxIndex);
+            currentIndex = normalizeIndex(currentIndex);
             buildDots();
         }
 
@@ -168,8 +270,9 @@ function initCasesSlider() {
             track.style.transform = `translateX(-${offset}px)`;
         }
 
-        if (prevBtn) prevBtn.disabled = currentIndex === 0;
-        if (nextBtn) nextBtn.disabled = currentIndex === maxIndex;
+        // в бесконечном режиме кнопки всегда активны
+        if (prevBtn) prevBtn.disabled = false;
+        if (nextBtn) nextBtn.disabled = false;
 
         updateDots();
         pauseAllVideos();
@@ -178,9 +281,14 @@ function initCasesSlider() {
     window.addEventListener(
         "resize",
         debounce(() => {
+            // пересчёт слайдов при ресайзе
+            maxIndex = Math.max(0, slides.length - getSlidesPerView());
+            currentIndex = normalizeIndex(currentIndex);
             updateSlider();
         }, 150)
     );
+
+    /* ----- Видео ----- */
 
     slides.forEach((slide, index) => {
         const video = videos[index];
@@ -229,10 +337,6 @@ function initCasesSlider() {
     }
 
     window.addEventListener("blur", () => pauseAllVideos());
-
-    function clamp(num, min, max) {
-        return Math.min(Math.max(num, min), max);
-    }
 }
 
 /* MODALS */

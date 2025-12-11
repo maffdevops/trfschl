@@ -339,7 +339,7 @@ function initCasesSlider() {
     window.addEventListener("blur", () => pauseAllVideos());
 }
 
-/* MODALS */
+/* MODALS + фикс скролла и закрытия по крестику */
 
 function initModals() {
     const openButtons = document.querySelectorAll("[data-modal-open]");
@@ -347,25 +347,52 @@ function initModals() {
     if (!openButtons.length || !modals.length) return;
 
     let activeModal = null;
+    let scrollPosition = 0;
+
+    function lockBodyScroll() {
+        scrollPosition =
+            window.pageYOffset ||
+            document.documentElement.scrollTop ||
+            document.body.scrollTop ||
+            0;
+
+        document.body.style.top = `-${scrollPosition}px`;
+        document.body.style.position = "fixed";
+        document.body.style.width = "100%";
+        document.body.classList.add("modal-open");
+    }
+
+    function unlockBodyScroll() {
+        document.body.classList.remove("modal-open");
+        document.body.style.position = "";
+        document.body.style.top = "";
+        document.body.style.width = "";
+        window.scrollTo(0, scrollPosition);
+    }
 
     function openModal(name) {
         const modal = document.querySelector(`.modal[data-modal="${name}"]`);
         if (!modal) return;
 
-        closeModal();
+        if (activeModal && activeModal !== modal) {
+            closeModal();
+        }
+
+        lockBodyScroll();
 
         modal.classList.add("modal--open");
         modal.setAttribute("aria-hidden", "false");
-        document.body.classList.add("modal-open");
         activeModal = modal;
     }
 
     function closeModal() {
         if (!activeModal) return;
+
         activeModal.classList.remove("modal--open");
         activeModal.setAttribute("aria-hidden", "true");
-        document.body.classList.remove("modal-open");
         activeModal = null;
+
+        unlockBodyScroll();
     }
 
     openButtons.forEach((btn) => {
@@ -376,8 +403,9 @@ function initModals() {
     });
 
     modals.forEach((modal) => {
+        // клик по оверлею или по элементу с data-modal-close (крестик, кнопка)
         modal.addEventListener("click", (event) => {
-            if (event.target.hasAttribute("data-modal-close")) {
+            if (event.target.closest("[data-modal-close]")) {
                 closeModal();
             }
         });

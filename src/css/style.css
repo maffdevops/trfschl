@@ -1145,7 +1145,11 @@ button {
         rgba(10, 10, 10, 0.98);
     border: 1px solid rgba(255, 255, 255, 0.16);
     box-shadow: 0 24px 80px rgba(0, 0, 0, 0.9);
-    overflow: hidden;
+
+    /* ВАЖНО: даём скролл самой модалке */
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+
     display: flex;
     flex-direction: column;
 }
@@ -1156,12 +1160,17 @@ button {
     font-weight: 700;
 }
 
+/* именно тут делаем скролл в теле модалки */
 .modal__body {
     font-size: 0.9rem;
     line-height: 1.7;
     color: rgba(255, 255, 255, 0.86);
-    overflow-y: auto;
     padding-right: 6px;
+
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .modal__body ul {
